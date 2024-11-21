@@ -58,6 +58,10 @@ if [ -d $ZSH ]; then
   if [ ! -f ~/.config/starship.toml ]; then
     curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
   fi
+  if [ ! -f ~/.config/theme.zsh ]; then
+    curl $REPO/.config/theme.zsh -o ~/.config/theme.zsh &>/dev/null
+  fi
+  source ~/.config/theme.zsh
 fi
 
 # aliases
