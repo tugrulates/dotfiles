@@ -1,3 +1,5 @@
+REPO=https://raw.githubusercontent.com/tugrulates/dotfiles/refs/heads/main
+
 # mac
 if [[ "$OSTYPE" == "darwin"* ]]; then
   plugins+=(macos)
@@ -54,7 +56,7 @@ if [ -d $ZSH ]; then
   source $ZSH/oh-my-zsh.sh
   eval "$(starship init zsh)"
   if [ ! -f ~/.config/starship.toml ]; then
-    starship preset gruvbox-rainbow -o ~/.config/starship.toml
+    curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
   fi
 fi
 
