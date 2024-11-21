@@ -9,11 +9,18 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 fi
 
+# starship
+if ! command -v starship &>/dev/null; then
+  mkdir -p ~/.starship
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
+  PATH="$PATH:$HOME/.starship"
+fi
+
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 install_ohmyzsh() {
   if [ ! -d $ZSH ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc 1>/dev/null 2>/dev/null
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc &>/dev/null
   fi
 }
 install_custom_plugin() {
@@ -40,11 +47,15 @@ enable_plugin gh gh
 enable_plugin git git gitignore
 enable_plugin python3 python
 if [ -d $ZSH ]; then
-  ZSH_THEME="agnoster"
+  ZSH_THEME=""
   ENABLE_CORRECTION="true"
   DEFAULT_USER="tugrul"
   ZSH_COLORIZE_STYLE="github-dark"
   source $ZSH/oh-my-zsh.sh
+  eval "$(starship init zsh)"
+  if [ ! -f ~/.config/starship.toml ]; then
+    starship preset gruvbox-rainbow -o ~/.config/starship.toml
+  fi
 fi
 
 # aliases

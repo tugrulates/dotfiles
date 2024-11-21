@@ -1,0 +1,203 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](purple)\
+$os\
+$username\
+[](fg:purple bg:pink)\
+$directory\
+[](fg:pink bg:orange)\
+$git_branch\
+$git_status\
+$git_metrics\
+[](fg:orange bg:aqua)\
+$c\
+$deno\
+$java\
+$nodejs\
+$python\
+$rust\
+[](fg:aqua bg:cyan)\
+$aws\
+$azure\
+$conda\
+$container\
+$docker_context\
+$gcloud\
+$package\
+[](fg:cyan bg:blue)\
+$time\
+[ ](fg:blue)"""
+
+palette = 'pastel'
+[palettes.pastel]
+black = '#000000'
+white = '#dbded8'
+blue = '#33658a'
+cyan = '#06969a'
+aqua = '#86bbd8'
+green = '#328940'
+orange = '#fca17d'
+purple = '#9a348e'
+pink = '#da627d'
+red = '#af3b42'
+
+[os]
+disabled = false
+style = "fg:white bg:purple"
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[username]
+show_always = true
+style_user = "fg:white bg:purple"
+style_root = "fg:white bg:purple"
+format = '[$user ]($style)'
+
+[directory]
+read_only = " 󰌾"
+style = "fg:black bg:pink"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"iCloud" = "󰅟 "
+"Code" = "󰲋 "
+"Desktop" = "  "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Movies" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = " "
+style = "fg:black bg:orange"
+format = '[ $symbol$branch ]($style)'
+
+[git_commit]
+tag_symbol = '  '
+
+[git_status]
+style = "bold fg:black bg:orange"
+format = '[($all_status$ahead_behind )]($style)'
+
+[git_metrics]
+disabled = false
+added_style = "bold fg:green bg:orange"
+deleted_style = "bold fg:red bg:orange"
+format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
+
+[c]
+symbol = " "
+style = "fg:black bg:aqua"
+format = '[[ $symbol($version) ](fg:black bg:aqua)]($style)'
+
+[deno]
+symbol = " "
+style = "fg:black bg:aqua"
+format = '[[ $symbol($version) ](fg:black bg:aqua)]($style)'
+
+[java]
+symbol = " "
+style = "fg:black bg:aqua"
+format = '[[ $symbol($version) ](fg:black bg:aqua)]($style)'
+
+[nodejs]
+symbol = " "
+style = "fg:black bg:aqua"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[python]
+symbol = " "
+style = "fg:black bg:aqua"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[rust]
+symbol = "󱘗 "
+style = "fg:black bg:aqua"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[aws]
+symbol = "  "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[azure]
+symbol = "  "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[conda]
+symbol = " "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[container]
+symbol = " "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[docker_context]
+symbol = " "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[gcloud]
+symbol = "󱇶  "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[package]
+symbol = "󰏗 "
+style = "fg:black bg:cyan"
+format = '[[ $symbol($version) ]($style)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[[  $time ](fg:white bg:blue)]($style)'
