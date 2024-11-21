@@ -11,11 +11,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 fi
 
-# starship
+# prompt
 if ! command -v starship &>/dev/null; then
   mkdir -p ~/.starship
   sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
   PATH="$PATH:$HOME/.starship"
+fi
+eval "$(starship init zsh)"
+if [ ! -f ~/.config/starship.toml ]; then
+  curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
 fi
 
 # oh-my-zsh
@@ -54,10 +58,6 @@ if [ -d $ZSH ]; then
   DEFAULT_USER="tugrul"
   ZSH_COLORIZE_STYLE="github-dark"
   source $ZSH/oh-my-zsh.sh
-  eval "$(starship init zsh)"
-  if [ ! -f ~/.config/starship.toml ]; then
-    curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
-  fi
   if [ ! -f ~/.config/theme.zsh ]; then
     curl $REPO/.config/theme.zsh -o ~/.config/theme.zsh &>/dev/null
   fi

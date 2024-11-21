@@ -28,28 +28,15 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # prompt
-function __bash_prompt {
-  local yellow="\[$(tput setaf 11)\]"
-  local green="\[$(tput setaf 10)\]"
-  local magenta="\[$(tput setaf 13)\]"
-  local white="\[$(tput setaf 15)\]"
-  local color_reset="\[$(tput sgr0)\]"
-  local user='`[ ! -z "${GITHUB_USER}" ] && echo -n "@${GITHUB_USER}" || echo -n "\u@\h"`'
-  local gitbranch='`\
-    if [ "$(git config --get codespaces-theme.hide-status 2>/dev/null)" != 1 ]; then \
-      export BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null); \
-      if [ "${BRANCH}" != "" ]; then \
-        echo -n " (${BRANCH}" \
-        && if git ls-files --error-unmatch -m --directory --no-empty-directory -o --exclude-standard ":/*" > /dev/null 2>&1; then \
-                echo -n "*"; \
-        fi \
-        && echo -n ")"; \
-      fi; \
-    fi`'
-  PS1="${green}${user}:${magenta}\w${yellow}${gitbranch}${color_reset}\$ "
-  unset -f __bash_prompt
-}
-__bash_prompt
+if ! command -v starship &>/dev/null; then
+  mkdir -p ~/.starship
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
+  PATH="$PATH:$HOME/.starship"
+fi
+eval "$(starship init bash)"
+if [ ! -f ~/.config/starship.toml ]; then
+  curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
+fi
 
 # profiles (aliases, completion etc.)
 declare -a profiles=(
