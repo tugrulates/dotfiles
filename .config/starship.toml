@@ -28,8 +28,9 @@ $package\
 [](fg:cyan bg:blue)\
 $time\
 [ ](fg:blue)"""
-
+add_newline = false
 palette = 'pastel'
+
 [palettes.pastel]
 black = '#000000'
 white = '#dbded8'

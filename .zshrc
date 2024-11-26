@@ -43,6 +43,9 @@ enable_plugin() {
 }
 install_ohmyzsh
 install_custom_plugin zsh-autosuggestions
+install_custom_plugin zsh-history-substring-search
+bindkey '^[[1;2A' history-substring-search-up
+bindkey '^[[1;2B' history-substring-search-down
 install_custom_plugin zsh-syntax-highlighting
 if ! command -v pygmentize &>/dev/null; then
   pip3 install Pygments &>/dev/null
@@ -54,7 +57,6 @@ enable_plugin git git gitignore
 enable_plugin python3 python
 if [ -d $ZSH ]; then
   ZSH_THEME=""
-  ENABLE_CORRECTION="true"
   DEFAULT_USER="tugrul"
   ZSH_COLORIZE_STYLE="github-dark"
   source $ZSH/oh-my-zsh.sh
