@@ -1,23 +1,44 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 format = """
-[](purple)\
+[](fg:accent-1)\
+[\
 $os\
 $username\
-[](fg:purple bg:pink)\
+](fg:black bg:accent-1)\
+[](fg:accent-1 bg:accent-2)\
+[\
 $directory\
-[](fg:pink bg:orange)\
+](fg:black bg:accent-2)\
+[](fg:accent-2 bg:accent-3)\
+[\
+$git_state\
 $git_branch\
+$git_commit\
 $git_status\
 $git_metrics\
-[](fg:orange bg:aqua)\
+](fg:black bg:accent-3)\
+[ ](fg:accent-3)\
+"""
+
+right_format = """
+[](fg:accent-3)\
+[$status](inverted bg:red fg:accent-3)\
+[](fg:accent-2 bg:accent-3)\
+[\
 $c\
+$bun\
 $deno\
+$golang\
 $java\
 $nodejs\
+$perl\
+$php\
 $python\
 $rust\
-[](fg:aqua bg:cyan)\
+](fg:black bg:accent-2)\
+[](fg:accent-1 bg:accent-2)\
+[\
 $aws\
 $azure\
 $conda\
@@ -25,27 +46,26 @@ $container\
 $docker_context\
 $gcloud\
 $package\
-[](fg:cyan bg:blue)\
-$time\
-[ ](fg:blue)"""
-add_newline = false
-palette = 'pastel'
+](fg:black bg:accent-1)\
+[](inverted fg:accent-1)\
+[$time](bg:grey)\
+"""
 
-[palettes.pastel]
-black = '#000000'
-white = '#dbded8'
-blue = '#33658a'
-cyan = '#06969a'
-aqua = '#86bbd8'
-green = '#328940'
-orange = '#fca17d'
-purple = '#9a348e'
-pink = '#da627d'
-red = '#af3b42'
+add_newline = false
+palette = "jazz"
+
+[palettes.jazz]
+black = "232"
+white = "7"
+red = "52"
+green = "22"
+accent-1 = "9"
+accent-2 = "13"
+accent-3 = "12"
 
 [os]
 disabled = false
-style = "fg:white bg:purple"
+format = "$symbol$os"
 
 [os.symbols]
 Alpaquita = " "
@@ -94,111 +114,133 @@ Windows = "󰍲 "
 
 [username]
 show_always = true
-style_user = "fg:white bg:purple"
-style_root = "fg:white bg:purple"
-format = '[$user ]($style)'
+format = "$user "
 
 [directory]
 read_only = " 󰌾"
-style = "fg:black bg:pink"
-format = "[ $path ]($style)"
+format = "  $path"
+before_repo_root_style = ""
+repo_root_style = ""
+repo_root_format = "  $repo_root$path[$read_only]($read_only_style) "
 truncation_length = 3
-truncation_symbol = "…/"
 
-[directory.substitutions]
-"iCloud" = "󰅟 "
-"Code" = "󰲋 "
-"Desktop" = "  "
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Movies" = " "
-"Pictures" = " "
+[git_state]
+rebase = " rebase"
+merge = " merge"
+revert = " revert"
+cherry_pick = " cherry pick"
+bisect = " bisect"
+am = " am"
+am_or_rebase = " am/rebase"
+format = "\\($state ($progress_current/$progress_total)\\)"
 
 [git_branch]
 symbol = " "
-style = "fg:black bg:orange"
-format = '[ $symbol$branch ]($style)'
+format = " $symbol$branch(:$remote_branch) "
 
 [git_commit]
-tag_symbol = '  '
+tag_symbol = " "
+only_detached = false
+tag_disabled = false
+format = "($tag )"
 
 [git_status]
-style = "bold fg:black bg:orange"
-format = '[($all_status$ahead_behind )]($style)'
+conflicted = "󰏐 "
+ahead = " "
+behind = " "
+diverged = "󰿣 "
+untracked = " "
+stashed = " "
+modified = ""  # using git metrics
+staged = " "
+renamed = " "
+deleted = " "
+typechanged = " "
+format = '($ahead_behind$all_status)'
 
 [git_metrics]
 disabled = false
-added_style = "bold fg:green bg:orange"
-deleted_style = "bold fg:red bg:orange"
-format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
+added_style = "bold fg:green bg:accent-3"
+deleted_style = "bold fg:red bg:accent-3"
+format = "([ $added ]($added_style))([ $deleted ]($deleted_style))"
 
 [c]
 symbol = " "
-style = "fg:black bg:aqua"
-format = '[[ $symbol($version) ](fg:black bg:aqua)]($style)'
+format = "$symbol($version) "
+
+[bun]
+symbol = " "
+format = "$symbol($version) "
 
 [deno]
 symbol = " "
-style = "fg:black bg:aqua"
-format = '[[ $symbol($version) ](fg:black bg:aqua)]($style)'
+format = "$symbol($version) "
+detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts']
+
+[golang]
+symbol = " "
+format = "$symbol($version) "
 
 [java]
 symbol = " "
-style = "fg:black bg:aqua"
-format = '[[ $symbol($version) ](fg:black bg:aqua)]($style)'
+format = "$symbol($version) "
 
 [nodejs]
 symbol = " "
-style = "fg:black bg:aqua"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
+detect_extensions = []
+
+[perl]
+symbol = " "
+format = "$symbol($version) "
+
+[php]
+symbol = " "
+format = "$symbol($version) "
 
 [python]
 symbol = " "
-style = "fg:black bg:aqua"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [rust]
 symbol = "󱘗 "
-style = "fg:black bg:aqua"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [aws]
 symbol = "  "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [azure]
 symbol = "  "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [conda]
 symbol = " "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [container]
 symbol = " "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [docker_context]
 symbol = " "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [gcloud]
 symbol = "󱇶  "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+format = "$symbol($version) "
 
 [package]
-symbol = "󰏗 "
-style = "fg:black bg:cyan"
-format = '[[ $symbol($version) ]($style)]($style)'
+symbol = " "
+format = "$symbol($version) "
+
+[status]
+disabled = false
+symbol = "✖ "
+recognize_signal_code = false
+format = "$symbol"
 
 [time]
 disabled = false
 time_format = "%R"
-format = '[[  $time ](fg:white bg:blue)]($style)'
+format = "󰥔 $time"
