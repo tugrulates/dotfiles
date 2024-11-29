@@ -1,32 +1,15 @@
 REPO=https://raw.githubusercontent.com/tugrulates/dotfiles/refs/heads/main
 
-# mac
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  plugins+=(macos)
+export ZSH="$HOME/.oh-my-zsh"
+
+setup_homebrew() {
   if [ -d /opt/homebrew ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
+}
+setup_mac_python() {
   if [ -d "$(python3 -m site --user-base)/bin" ]; then
     export PATH="$PATH:$(python3 -m site --user-base)/bin"
-  fi
-fi
-
-# prompt
-if ! command -v starship &>/dev/null; then
-  mkdir -p ~/.starship
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
-  PATH="$PATH:$HOME/.starship"
-fi
-if [ ! -f ~/.config/starship.toml ]; then
-  curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
-fi
-eval "$(starship init zsh)"
-
-# oh-my-zsh
-export ZSH="$HOME/.oh-my-zsh"
-install_pygments() {
-  if ! command -v pygmentize &>/dev/null; then
-    pip3 install Pygments &>/dev/null
   fi
 }
 install_ohmyzsh() {
@@ -34,11 +17,14 @@ install_ohmyzsh() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended --keep-zshrc &>/dev/null
   fi
 }
-install_theme() {
-  if [ ! -f ~/.config/theme.zsh ]; then
-    curl $REPO/.config/theme.zsh -o ~/.config/theme.zsh &>/dev/null
+install_starship() {
+  if ! command -v starship &>/dev/null; then
+    mkdir -p ~/.starship
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
   fi
-  source ~/.config/theme.zsh
+  if [ ! -f ~/.config/starship.toml ]; then
+    curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
+  fi
 }
 install_custom_plugin() {
   if [ ! -d $ZSH_CUSTOM/plugins/$1 ]; then
@@ -52,9 +38,21 @@ enable_plugin() {
     plugins+=($*)
   fi
 }
-install_pygments
+
+# mac
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  plugins+=(macos)
+  setup_homebrew
+  setup_mac_python
+fi
+
+# prompt
+PATH="$PATH:$HOME/.starship"
+install_starship
+eval "$(starship init zsh)"
+
+# oh-my-zsh
 install_ohmyzsh
-install_theme
 enable_plugin pygmentize colorize
 enable_plugin deno deno
 enable_plugin gh gh
@@ -68,9 +66,7 @@ bindkey '^[[1;2B' history-substring-search-down
 if [ -d $ZSH ]; then
   ZSH_THEME=""
   DEFAULT_USER="tugrul"
-  ZSH_COLORIZE_STYLE="dracula"
   source $ZSH/oh-my-zsh.sh
-  source ~/.config/theme.zsh
 fi
 
 # aliases
