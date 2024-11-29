@@ -37,7 +37,6 @@ eval "$(starship init bash)"
 if [ ! -f ~/.config/starship.toml ]; then
   curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
 fi
-source ~/.blesh/blesh/ble.sh
 
 # profiles (aliases, completion etc.)
 declare -a profiles=(
