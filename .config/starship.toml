@@ -12,11 +12,7 @@ $directory\
 ](fg:black bg:accent-2)\
 [](fg:accent-2 bg:accent-3)\
 [\
-$git_state\
 $git_branch\
-$git_commit\
-$git_status\
-$git_metrics\
 ](fg:black bg:accent-3)\
 [ ](fg:accent-3)\
 """
@@ -156,7 +152,7 @@ staged = " "
 renamed = " "
 deleted = " "
 typechanged = " "
-format = '($ahead_behind$all_status)'
+format = '($all_status)'
 
 [git_metrics]
 disabled = false
