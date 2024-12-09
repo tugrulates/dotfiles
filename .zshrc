@@ -65,7 +65,6 @@ bindkey '^[[1;2A' history-substring-search-up
 bindkey '^[[1;2B' history-substring-search-down
 if [ -d $ZSH ]; then
   ZSH_THEME=""
-  DEFAULT_USER="tugrul"
   source $ZSH/oh-my-zsh.sh
 fi
 
