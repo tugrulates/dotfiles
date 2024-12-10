@@ -46,6 +46,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   setup_mac_python
 fi
 
+# scripts
+[ -d ~/.scripts ] && export PATH="$PATH:$HOME/.scripts"
+
 # prompt
 PATH="$PATH:$HOME/.starship"
 install_starship

@@ -27,6 +27,9 @@ shopt -s checkwinsize
 # less
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# scripts
+[ -d ~/.scripts ] && export PATH="$PATH:$HOME/.scripts"
+
 # prompt
 if ! command -v starship &>/dev/null; then
   mkdir -p ~/.starship
