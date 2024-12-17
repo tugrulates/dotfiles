@@ -47,7 +47,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # scripts
-[ -d ~/.scripts ] && export PATH="$PATH:$HOME/.scripts"
+PATH="$PATH:$HOME/.local/bin"
 
 # prompt
 PATH="$PATH:$HOME/.starship"
@@ -74,6 +74,11 @@ fi
 # aliases
 alias l='ls -la'
 alias x='xargs -I{}'
+
+# gh
+if command -v gh &>/dev/null; then
+  gh alias import ~/.config/gh/aliases.yml --clobber &>/dev/null
+fi
 
 # editor
 if [[ -n $SSH_CONNECTION ]]; then

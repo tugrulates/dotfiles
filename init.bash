@@ -4,7 +4,7 @@ dir=$(dirname $(readlink -f $0))
 win_sed='s/#\s*win:\s*//'
 
 # ~/
-for file in .bash_aliases .bash_profile .bashrc .condarc .gitconfig .gitignore .inputrc .config/starship.toml; do
+for file in .bash_aliases .bash_profile .bashrc .condarc .gitconfig .gitignore .inputrc .config/gh/aliases.yml .config/starship.toml; do
   unlink ~/${file} 2>/dev/null
   mkdir -p $(dirname ~/${file})
   ln -s ${dir}/${file} ~/${file}

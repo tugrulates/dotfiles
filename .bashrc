@@ -64,8 +64,9 @@ if [ -d "$(python3 -m site --user-base)/bin" ]; then
 fi
 
 # gh
-if which gh >/dev/null; then
+if command -v gh &>/dev/null; then
   eval "$(gh completion -s bash)"
+  gh alias import ~/.config/gh/aliases.yml --clobber &>/dev/null
 fi
 
 # wsl
