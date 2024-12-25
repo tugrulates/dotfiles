@@ -3,6 +3,11 @@
 format = """
 [](fg:accent-1)\
 [\
+$aws\
+$azure\
+$gcloud\
+$container\
+$docker_context\
 $os\
 $username\
 ](fg:black bg:accent-1)\
@@ -35,12 +40,7 @@ $rust\
 ](fg:black bg:accent-2)\
 [](fg:accent-1 bg:accent-2)\
 [\
-$aws\
-$azure\
 $conda\
-$container\
-$docker_context\
-$gcloud\
 $package\
 ](fg:black bg:accent-1)\
 [](inverted fg:accent-1)\
@@ -171,7 +171,6 @@ format = "$symbol($version) "
 [deno]
 symbol = " "
 format = "$symbol($version) "
-detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts']
 
 [golang]
 symbol = " "
@@ -185,6 +184,7 @@ format = "$symbol($version) "
 symbol = " "
 format = "$symbol($version) "
 detect_extensions = []
+detect_files = ["!deno.json"]
 
 [perl]
 symbol = " "
