@@ -1,7 +1,8 @@
 "label setup": |-
   !(gh label list --json name -q .[].name | grep "^enhancement$" >/dev/null && gh label edit enhancement --name feature)
-  !(gh label list --json name -q .[].name | grep "^performance$" >/dev/null || gh label create performance -d "Optimizations for speed or memory" --color "#D4C5F9")
-  !(gh label list --json name -q .[].name | grep "^testing$" >/dev/null || gh label create testing -d "Testing and coverage" --color "#C2E0C6")
-  !(gh label list --json name -q .[].name | grep "^refactor$" >/dev/null || gh label create refactor -d "Code enhancements" --color "#FEF2C0")
-  !(gh label list --json name -q .[].name | grep "^dependencies$" >/dev/null || gh label create dependencies -d "Pull requests that update a dependency file" --color "#0366D6")
+  !(gh label create performance --force -d "Optimizations for speed or memory" --color "#D4C5F9")
+  !(gh label create testing --force -d "Testing and coverage" --color "#C2E0C6")
+  !(gh label create refactor --force -d "Code enhancements" --color "#FEF2C0")
+  !(gh label create dependencies --force -d "Pull requests that update a dependency file" --color "#0366D6")
+  !(gh label create release --force -d "Version bumps and releases" --color "#46D603")
   true
