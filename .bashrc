@@ -73,3 +73,6 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
+
+# gpg
+export GPG_TTY=$(tty)
