@@ -1,10 +1,19 @@
 [user]
-email = me@tugrulates.com
 name = Tugrul Ates
+email = me@tugrulates.com
+[commit]
+gpgsign = true
+[tag]
+gpgsign = true
 [alias]
 lg = log --graph --oneline --all --decorate
 s = status
-wrap = !git checkout main && git pull && git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
+b = town switch
+pr = !git town compress || true && git town propose
+compress = !git town sync && git town compress
+hack = town hack
+delete = town delete
+sync = town sync --all
 [filter "lfs"]
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
@@ -19,3 +28,7 @@ excludesFile = ~/.gitignore
 defaultBranch = main
 [gui]
 encoding = utf-8
+[git-town]
+ship-delete-tracking-branch = false
+ship-strategy = api
+sync-feature-strategy = rebase
