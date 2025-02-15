@@ -12,6 +12,7 @@ b = town switch
 pr = !git town compress || true && git town propose
 compress = !git town sync && git town compress
 hack = town hack
+rename = town rename
 delete = town delete
 sync = town sync --all
 [filter "lfs"]
