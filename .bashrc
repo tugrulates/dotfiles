@@ -69,10 +69,9 @@ if command -v gh &>/dev/null; then
   gh alias import ~/.config/gh/aliases.yml --clobber &>/dev/null
 fi
 
-# wsl
-if [ -d "$HOME/.local/bin" ]; then
-  export PATH="$PATH:$HOME/.local/bin"
-fi
+# scripts
+PATH="$PATH:$HOME/.deno/bin"
+PATH="$PATH:$HOME/.local/bin"
 
 # gpg
 export GPG_TTY=$(tty)

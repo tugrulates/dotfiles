@@ -47,6 +47,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # scripts
+PATH="$PATH:$HOME/.deno/bin"
 PATH="$PATH:$HOME/.local/bin"
 
 # prompt
