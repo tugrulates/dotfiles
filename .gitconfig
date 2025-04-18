@@ -7,7 +7,7 @@ gpgsign = true
 gpgsign = true
 [alias]
 lg = log --graph --oneline --all --decorate
-s = status
+s = status -s
 b = town switch
 pr = !git compress || true && git town propose
 compress = !git town sync && git town compress
