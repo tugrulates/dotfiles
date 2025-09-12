@@ -203,11 +203,11 @@ symbol = "󱘗 "
 format = "$symbol($version) "
 
 [aws]
-symbol = "  "
+symbol = ""
 format = "$symbol($version) "
 
 [azure]
-symbol = "  "
+symbol = ""
 format = "$symbol($version) "
 
 [conda]
@@ -215,15 +215,15 @@ symbol = " "
 format = "$symbol($version) "
 
 [container]
-symbol = " "
+symbol = ""
 format = "$symbol($version) "
 
 [docker_context]
-symbol = " "
+symbol = ""
 format = "$symbol($version) "
 
 [gcloud]
-symbol = "󱇶  "
+symbol = "󱇶"
 format = "$symbol($version) "
 
 [package]
