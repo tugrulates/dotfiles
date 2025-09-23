@@ -14,6 +14,7 @@ compress = !git town sync && git town compress
 hack = town hack
 append = town append
 prepend = town prepend
+set-parent = town set-parent
 rename = town rename
 delete = town delete
 sync = town sync --all
@@ -29,6 +30,9 @@ excludesFile = ~/.gitignore
 # win: fileMode = false
 [init]
 defaultBranch = main
+[rerere]
+enabled = true
+autoupdate = true
 [gui]
 encoding = utf-8
 [git-town]
