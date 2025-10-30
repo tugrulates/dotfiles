@@ -9,15 +9,20 @@ gpgsign = true
 lg = log --graph --oneline --all --decorate
 s = status -s
 b = town switch
-pr = !git compress || true && git town propose
-compress = !git town sync && git town compress
 hack = town hack
 append = town append
 prepend = town prepend
+up = town up
+down = town down
 set-parent = town set-parent
 rename = town rename
 delete = town delete
-sync = town sync --all
+diff-parent = town diff-parent
+park = town park
+sync = town sync
+compress = !sh -c 'git sync $@ && git town compress $@' -
+propose = !sh -c 'git compress $@ && git town propose $@' -
+repo = town repo
 [filter "lfs"]
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
@@ -36,6 +41,4 @@ autoupdate = true
 [gui]
 encoding = utf-8
 [git-town]
-ship-delete-tracking-branch = false
-ship-strategy = api
 sync-feature-strategy = rebase
