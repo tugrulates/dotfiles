@@ -1,0 +1,6 @@
+background-blur-radius = 4
+background-opacity = 0.95
+font-family = Fira Code
+keybind = global:cmd+grave_accent=toggle_visibility
+keybind = shift+enter=text:\x1b\r
+theme = dracula
