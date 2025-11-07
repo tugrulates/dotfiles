@@ -1,11 +1,7 @@
-# skip if not interactive
-case $- in
-*i*) ;;
-*) return ;;
-esac
-
-# editor
-export EDITOR='code --wait'
+# aliases
+alias h='history | sed "s/^ *[0-9][0-9]* *//" | grep'
+alias l='ls -la'
+alias x='xargs -I{}'
 
 # history
 export HISTCONTROL=ignoredups
@@ -27,50 +23,32 @@ shopt -s checkwinsize
 # less
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# scripts
-[ -d ~/.scripts ] && export PATH="$PATH:$HOME/.scripts"
-
 # prompt
 if ! command -v starship &>/dev/null; then
-	mkdir -p ~/.starship
-	sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
-	PATH="$PATH:$HOME/.starship"
+    mkdir -p ~/.starship
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
 fi
 eval "$(starship init bash)"
 if [ ! -f ~/.config/starship.toml ]; then
-	curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
+    curl $REPO/.config/starship.toml -o ~/.config/starship.toml &>/dev/null
 fi
 
 # profiles (aliases, completion etc.)
 declare -a profiles=(
-	~/.bash_aliases
-	/opt/homebrew/etc/profile.d/bash_completion.sh
-	/etc/bash_completion.d/git
-	/usr/share/bash-completion/completions/git
+    /opt/homebrew/etc/profile.d/bash_completion.sh
+    /etc/bash_completion.d/git
+    /usr/share/bash-completion/completions/git
 )
 for profile in "${profiles[@]}"; do
-	if [ -f $profile ]; then
-		. $profile
-	fi
+    if [ -f $profile ]; then
+        . $profile
+    fi
 done
 
 # mac
-if [ -d /opt/homebrew ]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-	export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
-if [ -d "$(python3 -m site --user-base)/bin" ]; then
-	export PATH="$PATH:$(python3 -m site --user-base)/bin"
-fi
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # gh
 if command -v gh &>/dev/null; then
-	eval "$(gh completion -s bash)"
+    eval "$(gh completion -s bash)"
 fi
-
-# scripts
-PATH="$PATH:$HOME/.deno/bin"
-PATH="$PATH:$HOME/.local/bin"
-
-# gpg
-export GPG_TTY=$(tty)
