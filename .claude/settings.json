@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git append:*)",
+      "Bash(git commit:*)",
+      "Bash(git diff:*)",
+      "Bash(git hack:*)",
+      "Bash(git log:*)",
+      "Bash(git prepend:*)",
+      "Bash(git push:*)",
+      "Bash(git status:*)",
+      "Bash(gh pr:*)",
+      "WebFetch(domain:code.claude.com)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/*.aes)",
+      "Read(**/*.age)",
+      "Read(**/*.argon2)",
+      "Read(**/*.bcrypt)",
+      "Read(**/*.cert)",
+      "Read(**/*.crt)",
+      "Read(**/*.gpg)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/*.pgp)",
+      "Read(**/*.scrypt)"
+    ],
+    "ask": []
+  },
+  "env": {
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1"
+  }
+}
