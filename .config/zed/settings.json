@@ -1,0 +1,109 @@
+{
+  "git_panel": {
+    "dock": "left"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+      "show_commit_summary": true
+    }
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "prettier": {
+    "allowed": false
+  },
+  "ui_font_family": "Fira Sans",
+  "buffer_font_weight": 500.0,
+  "buffer_font_family": "Fira Code",
+  "wrap_guides": [
+    80
+  ],
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "Dracula Light (Alucard)",
+    "dark": "Dracula"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "model_parameters": []
+  },
+  "terminal": {
+    "cursor_shape": "bar",
+    "font_family": "FiraCode Nerd Font"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "lsp": {
+    "deno": {
+      "settings": {
+        "deno": {
+          "enable": true
+        }
+      }
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": [
+                "deno.json",
+                "deno.jsonc"
+              ],
+              "url": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json"
+            },
+            {
+              "fileMatch": [
+                "package.json"
+              ],
+              "url": "http://json.schemastore.org/package"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "languages": {
+    "JavaScript": {
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint"
+      ],
+      "formatter": "language_server"
+    },
+    "TypeScript": {
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint"
+      ],
+      "formatter": "language_server"
+    },
+    "TSX": {
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint"
+      ],
+      "formatter": "language_server"
+    }
+  }
+}
