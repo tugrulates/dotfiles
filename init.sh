@@ -1,4 +1,4 @@
-# ./init.sh [shell...]
+# ./init.sh  [zsh] [bash]
 
 if [ $# -eq 0 ]; then
     shells=$(basename ${@} $SHELL)
