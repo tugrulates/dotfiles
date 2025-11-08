@@ -7,7 +7,7 @@
     },
     "model_parameters": []
   },
-  "buffer_font_family": "Fira Code",
+  "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 14.0,
   "buffer_font_weight": 500.0,
   "diagnostics": {
@@ -23,6 +23,11 @@
       "enabled": false,
       "show_commit_summary": true
     }
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Colored Zed Icons Theme Light",
+    "dark": "Colored Zed Icons Theme Dark"
   },
   "languages": {
     "JavaScript": {
