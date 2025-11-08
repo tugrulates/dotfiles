@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Bash(cd:*)",
       "Bash(git add:*)",
       "Bash(git append:*)",
       "Bash(git commit:*)",
@@ -11,7 +12,8 @@
       "Bash(git push:*)",
       "Bash(git status:*)",
       "Bash(gh pr:*)",
-      "WebFetch(domain:code.claude.com)"
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": [
       "Read(**/.env)",
