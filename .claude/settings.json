@@ -16,8 +16,7 @@
       "WebFetch(domain:github.com)"
     ],
     "deny": [
-      "Read(**/.env)",
-      "Read(**/.env.*)",
+      "Read(**/.env*)",
       "Read(**/*.aes)",
       "Read(**/*.age)",
       "Read(**/*.argon2)",
@@ -28,7 +27,9 @@
       "Read(**/*.key)",
       "Read(**/*.pem)",
       "Read(**/*.pgp)",
-      "Read(**/*.scrypt)"
+      "Read(**/*.scrypt)",
+      "Read(**/secrets.yml)",
+      "Read(.dev.vars)"
     ],
     "ask": []
   },
