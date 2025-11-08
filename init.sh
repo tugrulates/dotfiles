@@ -7,7 +7,6 @@ else
 fi
 
 dir=$(dirname "$(readlink -f "$0")")
-
 sources=(.claude .config .gitattributes .gitconfig .gitignore .profile)
 for shell in ${shells}; do
     if [ "${shell}" == "zsh" ]; then
@@ -17,15 +16,29 @@ for shell in ${shells}; do
     fi
 done
 
-files+=("$(cd "${dir}" && find .claude -type f)")
-files+=("$(cd "${dir}" && find .config -type f)")
+target() {
+    local file="$1"
+    if [ "${file}" != ".config/code/settings.json" ]; then
+        echo "$HOME/${file}"
+    else
+        os=$(uname -s)
+        if [ "${os}" == "Darwin" ]; then
+            echo "$HOME/Library/Application Support/Code/User/settings.json"
+        elif [ "${os}" == "Linux" ]; then
+            echo "$HOME/.config/Code/User/settings.json"
+        else
+            echo "$APPDATA/Code/User/settings.json"
+        fi
+    fi
+}
 
 for source in "${sources[@]}"; do
     files=$(cd "${dir}"; find "${source}" -type f)
     for file in ${files}; do
-        unlink "$HOME/${file}" 2>/dev/null
-        mkdir -p "$(dirname "$HOME/${file}")"
-        ln -s "${dir}/${file}" "$HOME/${file}"
-        echo "~/${file} -> ${dir}/${file}"
+        target=$(target "${file}")
+        unlink "${target}" 2>/dev/null
+        mkdir -p "$(dirname "${target}")"
+        ln -s "${dir}/${file}" "${target}"
+        echo "${target} -> ${dir}/${file}"
     done
 done
