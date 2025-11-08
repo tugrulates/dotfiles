@@ -1,11 +1,9 @@
 {
   "[graphql]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[python]": { "editor.defaultFormatter": "charliermarsh.ruff" },
-  "[shellscript]": { "editor.defaultFormatter": "mkhl.shfmt" },
   "debug.onTaskErrors": "showErrors",
   "deno.enable": true,
   "deno.lint": true,
-  "dev.containers.dockerPath": "container",
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "dotfiles.repository": "tugrulates/dotfiles",
