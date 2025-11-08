@@ -10,6 +10,9 @@
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 14.0,
   "buffer_font_weight": 500.0,
+  "code_actions_on_format": {
+    "source.organizeImports": true
+  },
   "diagnostics": {
     "inline": {
       "enabled": true
