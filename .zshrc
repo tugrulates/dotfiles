@@ -28,6 +28,9 @@ enable_plugin() {
     fi
 }
 
+# aliases
+alias x='xargs -I{}'
+
 # prompt
 install_starship
 eval "$(starship init zsh)"
