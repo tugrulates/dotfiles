@@ -39,7 +39,7 @@ enable_plugin deno deno
 enable_plugin gh gh
 enable_plugin git git gitignore
 enable_plugin python3 python
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ $OSTYPE == "darwin"* ]]; then
     plugins+=(macos)
 fi
 install_custom_plugin zsh-autosuggestions
@@ -48,6 +48,6 @@ install_custom_plugin zsh-syntax-highlighting
 bindkey '^[[1;2A' history-substring-search-up
 bindkey '^[[1;2B' history-substring-search-down
 if [ -d $ZSH ]; then
-	ZSH_THEME=""
-	source $ZSH/oh-my-zsh.sh
+    ZSH_THEME=""
+    source $ZSH/oh-my-zsh.sh
 fi

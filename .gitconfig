@@ -1,43 +1,43 @@
 [user]
-name = Tugrul Ates
-email = me@tugrulates.com
+	name = Tugrul Ates
+	email = me@tugrulates.com
 [commit]
-gpgsign = true
+	gpgsign = true
 [tag]
-gpgsign = true
+	gpgsign = true
 [alias]
-lg = log --graph --oneline --all --decorate
-s = status -s
-b = town switch
-hack = town hack
-append = town append
-prepend = town prepend
-up = town up
-down = town down
-set-parent = town set-parent
-rename = town rename
-delete = town delete
-diff-parent = town diff-parent
-park = town park
-sync = town sync
-compress = town compress
-pr = town propose
-repo = town repo
+	lg = log --graph --oneline --all --decorate
+	s = status -s
+	b = town switch
+	hack = town hack
+	append = town append
+	prepend = town prepend
+	up = town up
+	down = town down
+	set-parent = town set-parent
+	rename = town rename
+	delete = town delete
+	diff-parent = town diff-parent
+	park = town park
+	sync = town sync
+	compress = town compress
+	pr = town propose
+	repo = town repo
 [filter "lfs"]
-clean = git-lfs clean -- %f
-smudge = git-lfs smudge -- %f
-process = git-lfs filter-process
-required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [core]
-autocrlf = input
-excludesFile = ~/.gitignore
+	autocrlf = input
+	excludesFile = ~/.gitignore
 [init]
-defaultBranch = main
+	defaultBranch = main
 [rerere]
-enabled = true
-autoupdate = true
+	enabled = true
+	autoupdate = true
 [gui]
-encoding = utf-8
+	encoding = utf-8
 [git-town]
-main-branch = main
-sync-feature-strategy = rebase
+	main-branch = main
+	sync-feature-strategy = rebase
