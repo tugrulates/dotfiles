@@ -1,36 +1,4 @@
 {
-  "git_panel": {
-    "dock": "left"
-  },
-  "git": {
-    "inline_blame": {
-      "enabled": false,
-      "show_commit_summary": true
-    }
-  },
-  "diagnostics": {
-    "inline": {
-      "enabled": true
-    }
-  },
-  "prettier": {
-    "allowed": false
-  },
-  "ui_font_family": "Fira Sans",
-  "buffer_font_weight": 500.0,
-  "buffer_font_family": "Fira Code",
-  "wrap_guides": [
-    80
-  ],
-  "buffer_font_size": 14.0,
-  "theme": {
-    "mode": "system",
-    "light": "Dracula Light (Alucard)",
-    "dark": "Dracula"
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
-  },
   "agent": {
     "default_profile": "write",
     "default_model": {
@@ -39,42 +7,21 @@
     },
     "model_parameters": []
   },
-  "terminal": {
-    "cursor_shape": "bar",
-    "font_family": "FiraCode Nerd Font"
+  "buffer_font_family": "Fira Code",
+  "buffer_font_size": 14.0,
+  "buffer_font_weight": 500.0,
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
   },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
+  "features": {
+    "edit_prediction_provider": "copilot"
   },
-  "lsp": {
-    "deno": {
-      "settings": {
-        "deno": {
-          "enable": true
-        }
-      }
-    },
-    "json-language-server": {
-      "settings": {
-        "json": {
-          "schemas": [
-            {
-              "fileMatch": [
-                "deno.json",
-                "deno.jsonc"
-              ],
-              "url": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json"
-            },
-            {
-              "fileMatch": [
-                "package.json"
-              ],
-              "url": "http://json.schemastore.org/package"
-            }
-          ]
-        }
-      }
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+      "show_commit_summary": true
     }
   },
   "languages": {
@@ -105,5 +52,45 @@
       ],
       "formatter": "language_server"
     }
-  }
+  },
+  "lsp": {
+    "deno": {
+      "settings": {
+        "deno": {
+          "enable": true
+        }
+      }
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": ["deno.json", "deno.jsonc"],
+              "url": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json"
+            },
+            {
+              "fileMatch": ["package.json"],
+              "url": "http://json.schemastore.org/package"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "cursor_shape": "bar",
+    "font_family": "FiraCode Nerd Font"
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Dracula Light (Alucard)",
+    "dark": "Dracula"
+  },
+  "ui_font_family": "Fira Sans",
+  "wrap_guides": [80]
 }
