@@ -1,7 +1,6 @@
 # path
 PATH="$PATH:$HOME/.deno/bin"
 PATH="$PATH:$HOME/.local/bin"
-PATH="$PATH:$HOME/.starship"
 if [ -d "$(python3 -m site --user-base)/bin" ]; then
     PATH="$PATH:$(python3 -m site --user-base)/bin"
 fi

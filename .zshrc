@@ -7,6 +7,7 @@ install_ohmyzsh() {
     fi
 }
 install_starship() {
+    export PATH="$PATH:$HOME/.starship"
     if ! command -v starship &>/dev/null; then
         mkdir -p ~/.starship
         sh -c "$(curl -fsSL https://starship.rs/install.sh)" - -y -b ~/.starship &>/dev/null
