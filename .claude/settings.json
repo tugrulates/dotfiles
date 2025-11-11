@@ -1,17 +1,26 @@
 {
+  "env": {
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(cd:*)",
       "Bash(git add:*)",
-      "Bash(git append:*)",
+      "Bash(git checkout:*)",
       "Bash(git commit:*)",
       "Bash(git diff:*)",
-      "Bash(git hack:*)",
       "Bash(git log:*)",
-      "Bash(git prepend:*)",
       "Bash(git push:*)",
+      "Bash(git restore:*)",
       "Bash(git status:*)",
+      "Bash(git town append:*)",
+      "Bash(git town hack:*)",
+      "Bash(git town prepend:*)",
+      "Bash(git town switch:*)",
       "Bash(gh pr:*)",
+      "Bash(head:*)",
+      "Bash(less:*)",
       "WebFetch(domain:code.claude.com)",
       "WebFetch(domain:github.com)"
     ],
@@ -33,8 +42,9 @@
     ],
     "ask": []
   },
-  "env": {
-    "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_TELEMETRY": "1"
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false
   }
 }
