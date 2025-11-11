@@ -1,10 +1,17 @@
 {
+  "agent_servers": {
+    "claude": {
+      "default_mode": "acceptEdits",
+      "ignore_system_version": false
+    }
+  },
   "agent": {
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-haiku-4.5"
     },
+    "enable_feedback": false,
     "model_parameters": []
   },
   "buffer_font_family": "FiraCode Nerd Font",
