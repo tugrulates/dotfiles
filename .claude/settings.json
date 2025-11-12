@@ -6,9 +6,11 @@
   "permissions": {
     "allow": [
       "Bash(cd:*)",
+      "Bash(gh pr:*)",
       "Bash(git add:*)",
       "Bash(git checkout:*)",
       "Bash(git commit:*)",
+      "Bash(git diff-parent:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git push:*)",
@@ -18,11 +20,19 @@
       "Bash(git town hack:*)",
       "Bash(git town prepend:*)",
       "Bash(git town switch:*)",
-      "Bash(gh pr:*)",
+      "Bash(flow:*)",
+      "Bash(forge list:*)",
       "Bash(head:*)",
       "Bash(less:*)",
+      "SlashCommand(/design:*)",
+      "SlashCommand(/feature:*)",
+      "SlashCommand(/fix:*)",
+      "SlashCommand(/review:*)",
+      "WebFetch(domain:api.github.com)",
       "WebFetch(domain:code.claude.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch"
     ],
     "deny": [
       "Read(**/.env*)",
@@ -43,8 +53,9 @@
     "ask": []
   },
   "sandbox": {
-    "enabled": true,
     "autoAllowBashIfSandboxed": false,
-    "allowUnsandboxedCommands": false
-  }
+    "allowUnsandboxedCommands": false,
+    "enabled": true
+  },
+  "alwaysThinkingEnabled": true
 }
