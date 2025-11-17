@@ -7,7 +7,7 @@ else
 fi
 
 dir=$(dirname "$(readlink -f "$0")")
-sources=(.claude .config .gitattributes .gitconfig .gitignore .profile)
+sources=(.claude .config .copilot .gitattributes .gitconfig .gitignore .profile)
 for shell in ${shells}; do
     if [ "${shell}" == "zsh" ]; then
         sources+=(.zshrc .zprofile)
@@ -33,7 +33,7 @@ target() {
 }
 
 for source in "${sources[@]}"; do
-    files=$(cd "${dir}"; find "${source}" -type f)
+    files=$(cd "${dir}"; find "${source}" -type f -or -type l)
     for file in ${files}; do
         target=$(target "${file}")
         unlink "${target}" 2>/dev/null

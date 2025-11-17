@@ -6,6 +6,8 @@
   "permissions": {
     "allow": [
       "Bash(cd:*)",
+      "Bash(flow:*)",
+      "Bash(forge list:*)",
       "Bash(gh pr:*)",
       "Bash(git add:*)",
       "Bash(git checkout:*)",
@@ -20,8 +22,6 @@
       "Bash(git town hack:*)",
       "Bash(git town prepend:*)",
       "Bash(git town switch:*)",
-      "Bash(flow:*)",
-      "Bash(forge list:*)",
       "Bash(head:*)",
       "Bash(less:*)",
       "SlashCommand(/design:*)",
