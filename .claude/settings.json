@@ -53,9 +53,9 @@
     "ask": []
   },
   "sandbox": {
+    "enabled": true,
     "autoAllowBashIfSandboxed": false,
-    "allowUnsandboxedCommands": false,
-    "enabled": true
+    "allowUnsandboxedCommands": false
   },
   "alwaysThinkingEnabled": true
 }
