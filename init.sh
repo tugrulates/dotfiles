@@ -7,7 +7,7 @@ else
 fi
 
 dir=$(dirname "$(readlink -f "$0")")
-sources=(.claude .config .copilot .gitattributes .gitconfig .gitignore .profile)
+sources=(.agents .claude .config .copilot .gitattributes .gitconfig .gitignore .profile)
 for shell in ${shells}; do
     if [ "${shell}" == "zsh" ]; then
         sources+=(.zshrc .zprofile)

@@ -24,6 +24,7 @@
       "Bash(git town switch:*)",
       "Bash(head:*)",
       "Bash(less:*)",
+      "Read(~/.agents)",
       "SlashCommand(/design:*)",
       "SlashCommand(/feature:*)",
       "SlashCommand(/fix:*)",

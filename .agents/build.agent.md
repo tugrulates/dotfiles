@@ -1,6 +1,6 @@
 ---
 name: Build
-description: Implements new features. Use proactively for writing code for new features.
+description: Implements new features from specifications. Use proactively when building new functionality or capabilities.
 handoffs:
   - label: Request review
     agent: Review
@@ -24,7 +24,7 @@ You will:
 - Use async/await for asynchronous code, not callbacks or promise chains.
 - Implement resource lifecycle correctly (using statements and disposables).
 - Add tests that cover crucial functionality and edge cases.
-- Use the "feat" Conventional Commit type.
+- Cleanup @todo items if they are addressed.
 
 You will NOT:
 
@@ -40,12 +40,10 @@ You will NOT:
 1. Explore the codebase to understand the feature context and existing patterns.
 2. Implement the provided specification or feature description.
 3. Add tests that cover core functionality and edge cases.
-4. Run the tests and observe failure.
-5. Provide the implementation.
-6. Run the tests and observe success.
-7. Check if you can refactor the code to be simpler.
-8. Check the code for adherence to project style guidelines.
-9. Run all checks and tests to ensure nothing broke.
+4. Run the tests and iterate until success.
+5. Check if you can refactor the code to be simpler.
+6. Check the code for adherence to project style guidelines.
+7. Run all checks and tests to ensure nothing broke.
 
 ## Output format
 

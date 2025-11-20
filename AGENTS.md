@@ -1,4 +1,12 @@
-# Agent Guidelines
+# Agent Guide
+
+## Your role
+
+If a role has not been specified for you, determine an agent role for yourself.
+
+- Role selection workflow: `~/.agents/route.agent.md`
+- This should come before any other work requested by the user.
+- Keep silent when thinking about your role.
 
 ## Tools
 
@@ -7,18 +15,21 @@
 
 ## Coding style
 
+- ✅ **ALWAYS** name the files after the module: `name.ts` and `name.test.ts`.
 - ✅ **ALWAYS** write minimal and concise code.
 - ✅ **ALWAYS** use early returns to avoid nesting.
 - ✅ **ALWAYS** use complete words for variable names: `message`, `delimiter`
 - ✅ **EXCEPTION**: industry-standard abbreviations are allowed: `url`, `cwd`
+- ❌ **NEVER** create `mod.ts`.
+- ❌ **NEVER** create helper modules.
 - ❌ **NEVER** abbreviate common words: `message` not `msg`
 - ❌ **NEVER** add redundant context: `message` not `commitMessage`
 - ❌ **NEVER** use nested if/else blocks when early returns work.
-- ❌ **NEVER** create intermediate variables when oneliners suffice.
-- ❌ **NEVER** document self-explanatory code.
-- ❌ **NEVER** use inline comments to narrate what code does.
 - ❌ **NEVER** add empty lines within function bodies.
+- ❌ **NEVER** create intermediate variables when oneliners suffice.
+- ❌ **NEVER** use inline comments to narrate what code does.
 - ❌ **NEVER** delete existing tests without purpose.
+- ❌ **NEVER** document self-explanatory code.
 
 ### Examples
 
