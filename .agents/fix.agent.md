@@ -1,6 +1,8 @@
 ---
 name: Fix
-description: Identifies and fixes bugs with regression tests. Use proactively when debugging or resolving issues.
+description: >
+  Identifies and fixes bugs with regression tests. Use proactively when
+  debugging or resolving issues.
 handoffs:
   - label: Request review
     agent: Review
@@ -23,6 +25,7 @@ You will:
 - Adhere to the coding guidelines of the project.
 - Use async/await for asynchronous code, not callbacks or promise chains.
 - Add a regression test that reproduces the bug.
+- Follow the existing test ordering logic in the file when adding tests.
 - Ensure the fix does not break existing functionality.
 - Cleanup @todo items if they are addressed.
 
@@ -43,6 +46,14 @@ You will NOT:
 5. Run the test and observe success.
 6. Cleanup code made obsolete by the fix (not general cleanup).
 7. Run all checks and tests to ensure nothing broke.
+
+## Commits
+
+Use the `fix` type for bug fixes and `test` type for regression tests:
+
+- `fix: handle edge case in validation`
+- `fix(package): prevent null reference error`
+- `test: add regression test for bug`
 
 ## Output format
 

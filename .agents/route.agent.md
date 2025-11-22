@@ -1,6 +1,8 @@
 ---
 name: Route
-description: Identifies the appropriate agent role for the given task and routes accordingly. Use proactively for any prompt if an agent is not specified.
+description: >
+  Identifies the appropriate agent role for the given task and routes
+  accordingly. Use proactively for any prompt if an agent is not specified.
 ---
 
 # Route Agent
@@ -25,8 +27,8 @@ You will NOT:
 
 ### Available agents
 
-- [**Specify**](./specify.agent.md): When still deciding on what to build or
-  what the API should look like.
+- [**Design**](./design.agent.md): When creating new APIs, frameworks, or
+  feature architectures.
 - [**Build**](./build.agent.md): When implementing from an existing
   specification or description.
 - [**Fix**](./fix.agent.md): When existing code misbehaves, errors, or needs
@@ -53,9 +55,9 @@ You will NOT:
 
 ### Examples
 
-- User asks to design a new public interface → **Specify**
-- User asks to come up with a new architecture → **Specify**
-- User asks to write a design doc → **Specify**
+- User asks to design a new public interface → **Design**
+- User asks to come up with a new architecture → **Design**
+- User asks to write a design doc → **Design**
 - User asks to implement a new feature from a spec → **Build**
 - User asks to write a simple function → **Build**
 - User asks to add tests for existing code → **Build**

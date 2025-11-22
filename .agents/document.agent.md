@@ -1,6 +1,8 @@
 ---
 name: Document
-description: Writes API and module documentation. Use proactively when documenting code or creating developer guides.
+description: >
+  Writes API and module documentation. Use proactively when documenting code
+  or creating developer guides.
 handoffs:
   - label: Request review
     agent: Review
@@ -48,6 +50,13 @@ You will NOT:
 5. Add cross-references to related modules and external resources.
 6. Verify examples are accurate and runnable.
 7. Run checks to ensure documentation is valid.
+
+## Commits
+
+Use the `docs` type for all documentation changes:
+
+- `docs: add usage examples to module`
+- `docs(package): document public API`
 
 ## Output format
 

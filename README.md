@@ -7,20 +7,27 @@ the structure of this repository as a guide to creating your own dotfiles.
 
 ## Installation
 
-Run the initialization script to symlink configurations to their appropriate
-locations:
+- Clone the repository.
+- Setup symlinks from user directory to cloned directory: `init.sh`
 
-```sh
-init.sh [zsh] [bash]
-```
+## Agent configuration
 
-## Git Configuration
+- Custom instructions for coding agents.
+- Design, Build, Fix, Document, and Review agents for coding.
+- Route agent for task delegation.
+
+## Editor settings
+
+- Personal user settings for [VS Code](https://code.visualstudio.com)
+- Personal user settings for [Zed](https://zed.dev)
+
+## Git configuration
 
 - Aliases and configuration for [Git Town](https://www.git-town.com)
 - Sign commits and tags default
 - Consistent line endings
 
-## Shell Configuration
+## Shell configuration
 
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)-inspired terminal
   prompt
