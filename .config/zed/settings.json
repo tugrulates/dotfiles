@@ -1,10 +1,4 @@
 {
-  "agent_servers": {
-    "claude": {
-      "default_mode": "acceptEdits",
-      "ignore_system_version": false
-    }
-  },
   "agent": {
     "default_profile": "write",
     "default_model": {
@@ -14,20 +8,20 @@
     "enable_feedback": false,
     "model_parameters": []
   },
+  "agent_servers": {
+    "claude": {
+      "default_mode": "acceptEdits",
+      "ignore_system_version": false
+    }
+  },
   "buffer_font_family": "FiraCode Nerd Font",
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 13.0,
   "buffer_font_weight": 500.0,
   "calls": {
     "mute_on_join": true
   },
   "code_actions_on_format": {
     "source.organizeImports": true
-  },
-  "diagnostics": {
-    "inline": {
-      "enabled": true,
-      "min_column": 80
-    }
   },
   "features": {
     "edit_prediction_provider": "copilot"
