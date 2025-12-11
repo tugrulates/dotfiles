@@ -54,4 +54,8 @@ bindkey '^[[1;2B' history-substring-search-down
 if [ -d $ZSH ]; then
     ZSH_THEME=""
     source $ZSH/oh-my-zsh.sh
+    # https://github.com/denoland/deno/issues/25710
+    if command -v deno &>/dev/null && [ -f $ZSH_CACHE_DIR/completions/_deno ]; then
+        deno completions zsh --dynamic >| "$ZSH_CACHE_DIR/completions/_deno"
+    fi
 fi
