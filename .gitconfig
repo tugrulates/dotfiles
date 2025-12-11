@@ -39,5 +39,4 @@
 [gui]
 	encoding = utf-8
 [git-town]
-	main-branch = main
 	sync-feature-strategy = rebase
