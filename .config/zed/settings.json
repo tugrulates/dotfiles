@@ -3,7 +3,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-haiku-4.5"
+      "model": "claude-opus-4.5"
     },
     "enable_feedback": false,
     "model_parameters": []
