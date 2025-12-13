@@ -97,6 +97,9 @@
       }
     }
   },
+  "search": {
+    "center_on_match": true
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
