@@ -1,12 +1,11 @@
 # Agent Guide
 
-## Your role
+## Subagents
 
-If a role has not been specified for you, determine an agent role for yourself.
+⛔ **STOP**: Do not start any work before choosing a subagent. Do not directly
+work on the task. No task is too trivial to not use an agent.
 
-- Role selection workflow: `~/.agents/route.agent.md`
-- This should come before any other work requested by the user.
-- Keep silent when thinking about your role.
+Proactively use a subagent available through your tooling for every task.
 
 ## Tools
 

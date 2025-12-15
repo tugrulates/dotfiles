@@ -1,8 +1,6 @@
 ---
 name: Build
-description: >
-  Implements new features from specifications. Use proactively when building
-  new functionality or capabilities.
+description: Implements new features from specifications. Use proactively when building new functionality or capabilities.
 handoffs:
   - label: Request review
     agent: Review
