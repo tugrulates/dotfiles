@@ -1,6 +1,7 @@
 {
   "[graphql]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[python]": { "editor.defaultFormatter": "charliermarsh.ruff" },
+  "claudeCode.preferredLocation": "panel",
   "debug.onTaskErrors": "showErrors",
   "deno.enable": true,
   "deno.lint": true,
@@ -32,6 +33,7 @@
   "git.blame.statusBarItem.enabled": true,
   "git.confirmSync": false,
   "github.copilot.enable": { "markdown": true, "plaintext": true },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.defaultMergeMethod": "squash",
   "search.exclude": { "**/__mocks__/**": true, "**/__snapshots__/**": true },
   "settingsSync.ignoredSettings": ["-dotfiles.repository"],

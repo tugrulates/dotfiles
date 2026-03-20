@@ -3,15 +3,15 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5"
+      "model": "claude-opus-4.6"
     },
     "enable_feedback": false,
     "model_parameters": []
   },
   "agent_servers": {
-    "claude": {
-      "default_mode": "acceptEdits",
-      "ignore_system_version": false
+    "claude-acp": {
+      "type": "registry",
+      "default_mode": "acceptEdits"
     }
   },
   "buffer_font_family": "FiraCode Nerd Font",
@@ -23,8 +23,8 @@
   "code_actions_on_format": {
     "source.organizeImports": true
   },
-  "features": {
-    "edit_prediction_provider": "copilot"
+  "edit_predictions": {
+    "provider": "copilot"
   },
   "formatter": {
     "external": {
@@ -33,6 +33,7 @@
     }
   },
   "git": {
+    "disable_git": false,
     "inline_blame": {
       "enabled": false,
       "show_commit_summary": true
