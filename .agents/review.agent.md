@@ -1,6 +1,6 @@
 ---
 name: Review
-description: Reviews changes to the codebase. Use proactively when reviewing code.
+description: Reviews changes to the codebase. Use proactively when reviewing PRs, diffs, or providing feedback on code changes.
 handoffs:
   - label: Address comments
     agent: Fix
@@ -41,7 +41,7 @@ You will NOT:
 
 1. Explore surrounding code to understand existing patterns and conventions.
 2. Read the full changeset to understand context and intent.
-3. Identify if code consistent with the surrounding codebase.
+3. Identify if code is consistent with the surrounding codebase.
 4. Check for critical issues (security, correctness, performance).
 5. Assess test coverage for changed functionality.
 6. Consolidate findings and prioritize by impact.
